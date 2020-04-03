@@ -394,11 +394,7 @@ def managerview():
         datechosen = request.form['datebox']
     if scheduleform.Submit.data and scheduleform.is_submitted():
         dateToWork = datetime.datetime.fromisoformat(request.form['startdate'])
-        
-        print(type(dateToWork))
         st = datetime.time.fromisoformat(scheduleform.starttime.data)
-        
-        print(type(st))
         et = datetime.time.fromisoformat(scheduleform.endtime.data)
         empId = int(scheduleform.employees.data)
         s = Schedule( thedates = dateToWork, starttime = st, endtime=et, emp_id = empId, org_id = current_user.organization_id)
