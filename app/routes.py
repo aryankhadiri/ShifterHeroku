@@ -393,7 +393,7 @@ def managerview():
     if tableForm.goTo.data and request.method == 'POST':
         datechosen = request.form['datebox']
     if scheduleform.Submit.data and scheduleform.is_submitted():
-        dateToWork = datetime.datetime.fromisoformat(request.form['startdate'])
+        dateToWork = datetime.date.fromisoformat(request.form['startdate'])
         st = datetime.time.fromisoformat(scheduleform.starttime.data)
         et = datetime.time.fromisoformat(scheduleform.endtime.data)
         empId = int(scheduleform.employees.data)
